@@ -16,7 +16,16 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
             child: Container(
-              child: Text('image'),
+              child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 80,
+                    childAspectRatio: 0.5,
+                  ),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      color: Colors.black,
+                    );
+                  }),
             ),
           ),
           Container(

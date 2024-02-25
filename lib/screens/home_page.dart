@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,13 +16,16 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Container(
               child: GridView.builder(
+                  itemCount: 81,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 80,
-                    childAspectRatio: 0.5,
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 2,
+                    childAspectRatio: 2 / 3,
+                    mainAxisSpacing: 2,
                   ),
                   itemBuilder: (context, index) {
                     return Container(
-                      color: Colors.black,
+                      color: Colors.white,
                     );
                   }),
             ),
@@ -31,7 +33,10 @@ class _HomePageState extends State<HomePage> {
           Container(
             child: TextButton(
               onPressed: () {},
-              child: Text('Load More'),
+              child: Text(
+                'Load More',
+                style: TextStyle(color: Colors.white, fontSize: 20.0),
+              ),
             ),
           )
         ],

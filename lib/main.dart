@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaper_app/screens/catogories.dart';
 import 'package:wallpaper_app/screens/home_page.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         brightness: Brightness.dark,
       ),
-      home: HomePage(),
+      home: CategoryPage(),
       debugShowCheckedModeBanner: false,
     );
   }

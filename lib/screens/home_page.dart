@@ -55,6 +55,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Wallpapers'),
+      ),
       body: Column(
         children: [
           Expanded(
@@ -87,17 +90,22 @@ class _HomePageState extends State<HomePage> {
                   }),
             ),
           ),
-          Container(
-            child: TextButton(
-              onPressed: () {
-                loadMore();
-              },
-              child: Text(
-                'Load More',
-                style: TextStyle(color: Colors.white, fontSize: 20.0),
+          MaterialButton(
+            height: 50,
+            onPressed: () {
+              loadMore();
+            },
+            child: Container(
+              width: double.infinity,
+              height: 25,
+              child: Center(
+                child: Text(
+                  'Load More',
+                  style: TextStyle(color: Colors.white, fontSize: 20.0),
+                ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

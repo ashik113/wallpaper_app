@@ -1,0 +1,3 @@
+Make the collections and medias length list equals
+
+And make proper change to show all the categories with background image and its name...

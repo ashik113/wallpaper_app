@@ -1,8 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 
 class SetWallpaperScreen extends StatefulWidget {
   String imageUrl;
@@ -23,30 +21,38 @@ class _SetWallpaperScreenState extends State<SetWallpaperScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Set wallpaper'),
+      ),
       body: Container(
-        child: Column(children: [
-          Expanded(
-            child: Container(
-              child: Image.network(
-                widget.imageUrl,
-                fit: BoxFit.cover,
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                child: Image.network(
+                  widget.imageUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          Container(
-            child: TextButton(
-                onPressed: () {
-                  setWallpaper();
-                },
-                child: Text(
-                  'Set Wallpaper',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+            MaterialButton(
+              height: 50,
+              onPressed: () {
+                setWallpaper();
+              },
+              child: Container(
+                width: double.infinity,
+                height: 25,
+                child: Center(
+                  child: Text(
+                    'Set Wallpaper',
+                    style: TextStyle(color: Colors.white, fontSize: 20.0),
                   ),
-                )),
-          )
-        ]),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
